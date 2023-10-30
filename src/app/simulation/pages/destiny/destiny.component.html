@@ -1,0 +1,16 @@
+<mat-radio-group class="destiny__radio-group">
+  <mat-radio-button *ngFor="let option of options" [value]="option">
+    {{ option }}
+  </mat-radio-button>
+</mat-radio-group>
+
+<mat-form-field>
+  <mat-label>Informe o destino da viagem</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let destiny of destinies" [value]="destiny.value">
+      {{ destiny.label }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<app-stepper-button [hasBackButton]="true" />

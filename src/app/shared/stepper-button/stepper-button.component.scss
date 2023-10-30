@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container--single-btn {
+  display: flex;
+  justify-content: flex-end;
+}

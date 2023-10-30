@@ -1,0 +1,25 @@
+<section class="panel__container">
+  <app-folder></app-folder>
+  <app-panel-data></app-panel-data>
+
+  <mat-stepper [linear]="false" #stepper>
+    <mat-step [stepControl]="firstFormGroup" label="Quem irá viajar">
+      <app-persona />
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup" label="Qual destino da viagem">
+      <app-destiny />
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup" label="Qual o periodo da viagem">
+      <app-period />
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Resultado da simulação</ng-template>
+      <app-result />
+      <!-- <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button> -->
+    </mat-step>
+  </mat-stepper>
+</section>
