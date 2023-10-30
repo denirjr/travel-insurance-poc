@@ -1,6 +1,18 @@
-<mat-radio-group class="persona__radio-group">
-  <mat-radio-button *ngFor="let option of options" [value]="option">
-    {{ option }}
-  </mat-radio-button>
-</mat-radio-group>
-<app-stepper-button />
+<form [formGroup]="personaForm" (ngSubmit)="onSubmit()">
+  <mat-radio-group formControlName="option" class="persona__radio-group">
+    <mat-radio-button *ngFor="let option of options" [value]="option">
+      {{ option }}
+    </mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field>
+    <mat-label>Informe o motivo da viagem</mat-label>
+    <mat-select formControlName="reason">
+      <mat-option *ngFor="let reason of reasons" [value]="reason?.value">
+        {{ reason?.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <app-stepper-button [isDisabled]="personaForm.invalid" />
+</form>

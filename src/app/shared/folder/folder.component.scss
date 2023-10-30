@@ -1,5 +1,10 @@
 .folder {
-
+  margin: 1rem 0 0 0;
+  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   &__container {
     display: flex;
     flex-direction: row;

@@ -1,7 +1,14 @@
-<div class="container" [ngClass]="{'container--single-btn': !hasBackButton}" >
+<div class="container" [ngClass]="{ 'container--single-btn': !hasBackButton }">
   <ng-container *ngIf="hasBackButton">
     <button mat-raised-button matStepperPrevious>Pergunta anterior</button>
   </ng-container>
 
-  <button mat-raised-button matStepperNext>Próxima pergunta</button>
+  <button
+    [type]="nextButtonType"
+    [disabled]="isDisabled"
+    mat-raised-button
+    matStepperNext
+  >
+    Próxima pergunta
+  </button>
 </div>

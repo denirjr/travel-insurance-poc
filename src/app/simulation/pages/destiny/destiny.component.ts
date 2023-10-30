@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-destiny',
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./destiny.component.scss'],
 })
 export class DestinyComponent {
+  public destinyForm = new FormGroup({
+    option: new FormControl('', Validators.required),
+    destiny: new FormControl('', Validators.required),
+  });
+
   public options: string[] = ['Brasil', 'Exterior'];
 
   public destinies = [
@@ -18,4 +24,9 @@ export class DestinyComponent {
       label: 'Salvador',
     },
   ];
+
+  public onSubmit() {
+    // @TODO: Send to service
+    console.log(this.destinyForm.value);
+  }
 }

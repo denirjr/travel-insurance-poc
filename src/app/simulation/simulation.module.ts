@@ -22,6 +22,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import { ResultCardComponent } from '../shared/result-card/result-card.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     CommonModule,
     FolderComponent,
+    ResultCardComponent,
     PanelDataComponent,
     StepperButtonComponent,
     MatFormFieldModule,
@@ -48,12 +50,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatDatepickerModule,
     FormsModule,
-    ReactiveFormsModule,
     MatNativeDateModule,
-
     MatExpansionModule,
     MatIconModule,
-
   ],
 })
 export class SimulationModule {}

@@ -1,5 +1,6 @@
-<section class="panel__container">
-  <app-folder></app-folder>
+<app-folder></app-folder>
+
+<div class="panel__container">
   <app-panel-data></app-panel-data>
 
   <mat-stepper [linear]="false" #stepper>
@@ -22,8 +23,6 @@
       <button mat-button (click)="stepper.reset()">Reset</button> -->
     </mat-step>
   </mat-stepper>
-</section>
 
-<mat-card>
-  <mat-card-content>Simple card</mat-card-content>
-</mat-card>
+  <app-result-card />
+</div>

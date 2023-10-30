@@ -12,4 +12,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 })
 export class StepperButtonComponent {
   @Input({ required: false }) public hasBackButton = false;
+  @Input({ required: false }) public isDisabled = false;
+  @Input({ required: false }) public nextButtonType = 'submit';
+
 }
