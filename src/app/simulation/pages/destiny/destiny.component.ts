@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { SimulationMessageService } from '../../services/simulation-message/simulation-message.service';
 
 @Component({
   selector: 'app-destiny',
@@ -7,6 +8,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./destiny.component.scss'],
 })
 export class DestinyComponent {
+  constructor(private message$: SimulationMessageService) {}
+
   public destinyForm = new FormGroup({
     option: new FormControl('', Validators.required),
     destiny: new FormControl('', Validators.required),
@@ -25,8 +28,12 @@ export class DestinyComponent {
     },
   ];
 
-  public onSubmit() {
-    // @TODO: Send to service
-    console.log(this.destinyForm.value);
+  public onSubmit(): void {
+    this.message$.update({
+      destiny: {
+        state: this.destinyForm.value.destiny ?? '',
+        where: this.destinyForm.value.option ?? '',
+      },
+    });
   }
 }

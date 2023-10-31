@@ -1,7 +1,6 @@
 <app-folder></app-folder>
 
 <div class="panel__container">
-  <app-panel-data></app-panel-data>
 
   <mat-stepper [linear]="false" #stepper>
     <mat-step [stepControl]="firstFormGroup" label="Quem irá viajar">
@@ -24,5 +23,5 @@
     </mat-step>
   </mat-stepper>
 
-  <app-result-card />
+  <app-result-card [data]="(simulationData$ | async)!"  />
 </div>

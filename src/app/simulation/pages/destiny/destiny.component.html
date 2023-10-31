@@ -8,7 +8,7 @@
   <mat-form-field>
     <mat-label>Informe o destino da viagem</mat-label>
     <mat-select formControlName="destiny">
-      <mat-option *ngFor="let destiny of destinies" [value]="destiny.value">
+      <mat-option *ngFor="let destiny of destinies" [value]="destiny.label">
         {{ destiny.label }}
       </mat-option>
     </mat-select>

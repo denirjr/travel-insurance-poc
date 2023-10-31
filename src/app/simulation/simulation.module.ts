@@ -7,9 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatStepperModule } from '@angular/material/stepper';
-import { FolderComponent } from '../shared/folder/folder.component';
-import { PanelDataComponent } from '../shared/panel-data/panel-data.component';
-import { StepperButtonComponent } from '../shared/stepper-button/stepper-button.component';
+import { FolderComponent } from '../shared/components/folder/folder.component';
+import { StepperButtonComponent } from '../shared/components/stepper-button/stepper-button.component';
 import { DestinyComponent } from './pages/destiny/destiny.component';
 import { PeriodComponent } from './pages/period/period.component';
 import { PersonaComponent } from './pages/persona/persona.component';
@@ -22,7 +21,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
-import { ResultCardComponent } from '../shared/result-card/result-card.component';
+import { ResultCardComponent } from '../shared/components/result-card/result-card.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +42,6 @@ import { ResultCardComponent } from '../shared/result-card/result-card.component
     CommonModule,
     FolderComponent,
     ResultCardComponent,
-    PanelDataComponent,
     StepperButtonComponent,
     MatFormFieldModule,
     MatSelectModule,
