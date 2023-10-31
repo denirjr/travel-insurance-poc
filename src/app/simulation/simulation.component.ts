@@ -1,20 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SimulationMessageService } from './services/simulation-message/simulation-message.service';
+import { Observable, of } from 'rxjs';
+import { SimulationModel } from './models/simulation.model';
 
 @Component({
   selector: 'app-simulation',
   templateUrl: './simulation.component.html',
   styleUrls: ['./simulation.component.scss'],
 })
-export class SimulationComponent {
-  onStepSelectionChange(event: any): void {
-    console.log(event);
-  }
+export class SimulationComponent implements OnInit {
+  public simulationData$: Observable<SimulationModel> = of(
+    {} as SimulationModel
+  );
 
+  constructor(private message$: SimulationMessageService) {}
 
-  isStepCompleted(stepIndex: any): boolean {
-    console.log(stepIndex)
-    // Implement your logic for step completion status
-    // For example, check if the user has filled in all required fields for that step.
-    return true; // Return true or false based on your criteria.
+  ngOnInit(): void {
+    this.simulationData$ = this.message$.get$;
   }
 }

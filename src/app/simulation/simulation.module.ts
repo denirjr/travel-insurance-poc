@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SimulationDataComponent } from './pages/simulation-data/simulation-data.component';
 import {MatTableModule} from '@angular/material/table';
 import { IncludeLabelPipe } from '../shared/pipes/include-label/include-label.pipe';
+import { CardDataComponent } from '../shared/components/card-data/card-data.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { IncludeLabelPipe } from '../shared/pipes/include-label/include-label.pi
     HttpClientModule,
     IncludeLabelPipe,
     MatTableModule,
+    CardDataComponent,
   ],
 })
 export class SimulationModule {}

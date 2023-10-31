@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./simulation/simulation.module').then((m) => m.SimulationModule),
   },
-  // { path: '', redirectTo: 'simulacao', pathMatch: 'full' },
+  { path: '', redirectTo: 'simulacao', pathMatch: 'full' },
 ];
 
 @NgModule({
