@@ -1,0 +1,68 @@
+<mat-card>
+  <mat-card-content>
+    <main class="result__main">
+      <section>
+        <span>
+          Compare e escolha o melhor plano <br />
+          <br />
+          <br />
+        </span>
+
+        <ul>
+          <li>Assistência médica</li>
+          <li>Despesa de farmacia</li>
+          <li>Seguro bagagem</li>
+        </ul>
+        <span>Servicos</span>
+        <ul>
+          <li>Localização de bagagem</li>
+          <li>Perda de documentos</li>
+          <li>Concierge</li>
+        </ul>
+      </section>
+
+      <section *ngFor="let data of data?.plus">
+        <h1>
+          Seguro viagem {{travelPlaceText}} plus <br />
+          <mat-radio-button value="plusValue">
+            {{ data?.value }}
+          </mat-radio-button>
+        </h1>
+        <ul>
+          <li>{{ data?.assMedica }}</li>
+          <li>{{ data?.despesaFarmacia }}</li>
+          <li>{{ data?.seguro }}</li>
+        </ul>
+
+        <br />
+
+        <ul>
+          <li>{{ data?.localizacaoBagagem | includeLabel }}</li>
+          <li>{{ data.perdaDocumento | includeLabel }}</li>
+          <li>{{ data.concierge | includeLabel }}</li>
+        </ul>
+      </section>
+      <section *ngFor="let data of data?.default">
+        <h1>
+          Seguro viagem {{travelPlaceText}} <br />
+          <mat-radio-button value="plusValue">
+            {{ data?.value }}
+          </mat-radio-button>
+        </h1>
+        <ul>
+          <li>{{ data?.assMedica }}</li>
+          <li>{{ data?.despesaFarmacia }}</li>
+          <li>{{ data?.seguro }}</li>
+        </ul>
+
+        <br />
+
+        <ul>
+          <li>{{ data?.localizacaoBagagem | includeLabel }}</li>
+          <li>{{ data?.perdaDocumento | includeLabel }}</li>
+          <li>{{ data?.concierge | includeLabel }}</li>
+        </ul>
+      </section>
+    </main>
+  </mat-card-content>
+</mat-card>

@@ -1,33 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { SimulationMessageService } from './services/simulation-message/simulation-message.service';
-import { Observable, of } from 'rxjs';
-import { SimulationModel } from './models/simulation.model';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-simulation',
   templateUrl: './simulation.component.html',
   styleUrls: ['./simulation.component.scss'],
 })
-export class SimulationComponent implements OnInit {
-  public simulationData$: Observable<SimulationModel> = of({} as SimulationModel);
+export class SimulationComponent {
+  onStepSelectionChange(event: any): void {
+    console.log(event);
+  }
 
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
-  thirdFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
 
-  constructor(
-    private message$: SimulationMessageService,
-    private _formBuilder: FormBuilder
-  ) {}
-
-  ngOnInit(): void {
-    this.simulationData$ = this.message$.get$;
+  isStepCompleted(stepIndex: any): boolean {
+    console.log(stepIndex)
+    // Implement your logic for step completion status
+    // For example, check if the user has filled in all required fields for that step.
+    return true; // Return true or false based on your criteria.
   }
 }

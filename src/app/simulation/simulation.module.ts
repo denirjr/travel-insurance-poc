@@ -12,7 +12,6 @@ import { StepperButtonComponent } from '../shared/components/stepper-button/step
 import { DestinyComponent } from './pages/destiny/destiny.component';
 import { PeriodComponent } from './pages/period/period.component';
 import { PersonaComponent } from './pages/persona/persona.component';
-import { ResultComponent } from './pages/result/result.component';
 import { SimulationRoutingModule } from './simulation-routing.module';
 import { SimulationComponent } from './simulation.component';
 
@@ -21,7 +20,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
-import { ResultCardComponent } from '../shared/components/result-card/result-card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SimulationDataComponent } from './pages/simulation-data/simulation-data.component';
+import {MatTableModule} from '@angular/material/table';
+import { IncludeLabelPipe } from '../shared/pipes/include-label/include-label.pipe';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,7 @@ import { ResultCardComponent } from '../shared/components/result-card/result-car
     PersonaComponent,
     DestinyComponent,
     PeriodComponent,
-    ResultComponent,
+    SimulationDataComponent,
   ],
   imports: [
     SimulationRoutingModule,
@@ -41,7 +44,6 @@ import { ResultCardComponent } from '../shared/components/result-card/result-car
     MatInputModule,
     CommonModule,
     FolderComponent,
-    ResultCardComponent,
     StepperButtonComponent,
     MatFormFieldModule,
     MatSelectModule,
@@ -51,6 +53,8 @@ import { ResultCardComponent } from '../shared/components/result-card/result-car
     MatNativeDateModule,
     MatExpansionModule,
     MatIconModule,
+    HttpClientModule,
+    IncludeLabelPipe,
   ],
 })
 export class SimulationModule {}

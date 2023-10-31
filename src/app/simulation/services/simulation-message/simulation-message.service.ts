@@ -11,11 +11,11 @@ export class SimulationMessageService {
   );
   public get$ = this.messageSub$.asObservable();
 
-  public set(message: SimulationModel) {
+  public set(message: SimulationModel): void {
     this.messageSub$.next(message);
   }
 
-  public update(changes: Partial<SimulationModel>) {
+  public update(changes: Partial<SimulationModel>): void {
     const updatedMessage = { ...this.messageSub$.value, ...changes };
     this.messageSub$.next(updatedMessage);
   }
