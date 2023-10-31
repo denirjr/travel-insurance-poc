@@ -55,6 +55,7 @@ import { IncludeLabelPipe } from '../shared/pipes/include-label/include-label.pi
     MatIconModule,
     HttpClientModule,
     IncludeLabelPipe,
+    MatTableModule,
   ],
 })
 export class SimulationModule {}

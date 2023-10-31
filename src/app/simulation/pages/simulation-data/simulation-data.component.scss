@@ -1,8 +1,42 @@
+:host {
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+}
+
 mat-card {
-margin: 1rem 0 0 0;
-    .result__main {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+  margin: 1rem 0 0 0;
+
+  .result__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+
+    &-description {
+      margin: calc(3rem + 0.4em) 0 0 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &-title {
+        margin: 0.2rem 0 0.2rem 0;
+        font-weight: 600;
       }
+    }
+
+    &-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &--thead {
+        margin: 0 0 1rem 0;
+      }
+    }
+  }
 }

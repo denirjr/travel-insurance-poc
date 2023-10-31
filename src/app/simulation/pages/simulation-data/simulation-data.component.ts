@@ -26,7 +26,7 @@ export class SimulationDataComponent {
   private getSimulationResult(): void {
     this.message$.get$
       .pipe(
-        // filter((res) => 'period' in res),
+        filter((res) => 'period' in res),
         tap((notifiedMessage) =>
           this.isNationalOrInternationalText(notifiedMessage?.destiny?.where)
         ),
@@ -42,7 +42,6 @@ export class SimulationDataComponent {
   }
 
   private isNationalOrInternationalText = (where: string): void => {
-    this.travelPlaceText =
-      where === 'Exterior' ? 'internacional' : 'nacional';
+    this.travelPlaceText = where === 'Exterior' ? 'internacional' : 'nacional';
   };
 }

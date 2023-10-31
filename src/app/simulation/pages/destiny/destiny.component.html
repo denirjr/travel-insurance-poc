@@ -1,6 +1,6 @@
 <form [formGroup]="destinyForm" (ngSubmit)="onSubmit()">
   <mat-radio-group formControlName="option" class="destiny__radio-group">
-    <mat-radio-button *ngFor="let option of options" [value]="option">
+    <mat-radio-button [color]="'primary'" *ngFor="let option of options" [value]="option">
       {{ option }}
     </mat-radio-button>
   </mat-radio-group>

@@ -1,67 +1,67 @@
 <mat-card>
   <mat-card-content>
-    <main class="result__main">
-      <section>
-        <span>
-          Compare e escolha o melhor plano <br />
-          <br />
-          <br />
+    <main class="result__container">
+      <section class="result__container-description">
+        <span class="result__container-description-title">
+          Compare e escolha o melhor plano
         </span>
 
-        <ul>
-          <li>Assistência médica</li>
-          <li>Despesa de farmacia</li>
-          <li>Seguro bagagem</li>
-        </ul>
-        <span>Servicos</span>
-        <ul>
-          <li>Localização de bagagem</li>
-          <li>Perda de documentos</li>
-          <li>Concierge</li>
-        </ul>
+        <td>Assistência médica</td>
+        <td>Despesa de farmacia</td>
+        <td>Seguro bagagem</td>
+
+        <span class="result__container-description-title">Servicos</span>
+
+        <td>Localização de bagagem</td>
+        <td>Perda de documentos</td>
+        <td>Concierge</td>
       </section>
 
-      <section *ngFor="let data of data?.plus">
-        <h1>
-          Seguro viagem {{travelPlaceText}} plus <br />
-          <mat-radio-button value="plusValue">
-            {{ data?.value }}
+      <section
+        class="result__container-section"
+        *ngFor="let data of data?.plus"
+      >
+        <th class="result__container-section--thead">
+          <mat-radio-button [color]="'primary'">
+            Seguro viagem {{ travelPlaceText }} plus
           </mat-radio-button>
-        </h1>
-        <ul>
-          <li>{{ data?.assMedica }}</li>
-          <li>{{ data?.despesaFarmacia }}</li>
-          <li>{{ data?.seguro }}</li>
-        </ul>
+          <br />
+          {{ data?.value }}
+        </th>
+
+        <td>{{ data?.assMedica }}</td>
+        <td>{{ data?.despesaFarmacia }}</td>
+        <td>{{ data?.seguro }}</td>
 
         <br />
 
-        <ul>
-          <li>{{ data?.localizacaoBagagem | includeLabel }}</li>
-          <li>{{ data.perdaDocumento | includeLabel }}</li>
-          <li>{{ data.concierge | includeLabel }}</li>
-        </ul>
+        <td>{{ data?.localizacaoBagagem | includeLabel }}</td>
+        <td>{{ data.perdaDocumento | includeLabel }}</td>
+        <td>{{ data.concierge | includeLabel }}</td>
       </section>
-      <section *ngFor="let data of data?.default">
-        <h1>
-          Seguro viagem {{travelPlaceText}} <br />
-          <mat-radio-button value="plusValue">
-            {{ data?.value }}
+
+      <section
+        class="result__container-section"
+        *ngFor="let data of data?.default"
+      >
+        <th class="result__container-section--thead">
+          <mat-radio-button [color]="'primary'">
+            Seguro viagem {{ travelPlaceText }}
           </mat-radio-button>
-        </h1>
-        <ul>
-          <li>{{ data?.assMedica }}</li>
-          <li>{{ data?.despesaFarmacia }}</li>
-          <li>{{ data?.seguro }}</li>
-        </ul>
+
+          <br />
+          
+          {{ data?.value }}
+        </th>
+        <td>{{ data?.assMedica }}</td>
+        <td>{{ data?.despesaFarmacia }}</td>
+        <td>{{ data?.seguro }}</td>
 
         <br />
 
-        <ul>
-          <li>{{ data?.localizacaoBagagem | includeLabel }}</li>
-          <li>{{ data?.perdaDocumento | includeLabel }}</li>
-          <li>{{ data?.concierge | includeLabel }}</li>
-        </ul>
+        <td>{{ data?.localizacaoBagagem | includeLabel }}</td>
+        <td>{{ data?.perdaDocumento | includeLabel }}</td>
+        <td>{{ data?.concierge | includeLabel }}</td>
       </section>
     </main>
   </mat-card-content>
